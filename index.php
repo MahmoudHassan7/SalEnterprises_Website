@@ -42,7 +42,7 @@
 <main>
   <section class="advice">
      <div class="logo">
-            <img src="images/logos/sal logo.png" alt="MS LOOTAH Logo">
+            <img src="images/logos/sal logo.png" alt="SALENTERPRISE Logo">
         </div>
     <h1 class="advice__title">We're Building Something Great!</h1>
      <div class="contact">
@@ -50,8 +50,7 @@
          </div>
         <div class="countdown">Expected Launch: <strong>AUGUST 2025</strong></div>
 
-        <a href="./prehome">  <button class="curved-button">Check Latest News</button> </a>
-
+ 
   </section>
   <section class="city-stuff">
     <ul class="skyscrappers__list">
