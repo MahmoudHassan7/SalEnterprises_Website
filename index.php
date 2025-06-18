@@ -48,7 +48,6 @@
      <div class="contact">
             <p>For inquiries, please contact us at: <a href="mailto:info@salenterprises.ae">info@salenterprises.ae</a></p>
          </div>
-        <div class="countdown">Expected Launch: <strong>AUGUST 2025</strong></div>
 
  
   </section>
