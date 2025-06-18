@@ -6,13 +6,13 @@
 main {
   position: relative;
   height: 100vh;
-  background: linear-gradient(to top, #1b1d1d, rgba(255, 255, 255, 0.75));
+  background: white;
 }
 
 body {
   font-size: 12px;
   font-family: "Josefin Sans", "Roboto", sans-serif;
-  color: white;
+  color: black;
   overflow: hidden;
   background-color: #252627;
 }

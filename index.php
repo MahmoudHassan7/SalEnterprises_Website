@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/land-page.css">
  <style>
   .curved-button {
-    background-color: #E60B40;
+    background-color: black;
     color: white;
     border: none;
     border-radius: 25px; /* Adjust for more or less curvature */
