@@ -14,19 +14,21 @@
   <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
+
   <style>
 /* Global */
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'neo-medium','Cairo',Arial,sans-serif !important;
-  background: #fff;
+font-family: "Noto Sans Arabic", sans-serif;  background: #fff;
   overflow-x: hidden;
 }
 h1,h2,h3,h4,h5,h6,p {
   text-align: right;
-  font-family: 'neo-medium','Cairo',Arial,sans-serif !important;
-}
+font-family: "Noto Sans Arabic", sans-serif;}
 
 /* Navbar */
 .custom-navbar {
@@ -53,8 +55,7 @@ h1,h2,h3,h4,h5,h6,p {
   font-size: 1rem;
   font-weight: 500;
   transition: color .2s;
-  font-family: 'neo-medium','Cairo',Arial,sans-serif !important;
-}
+font-family: "Noto Sans Arabic", sans-serif;}
 .custom-navbar .nav-link:hover,
 .custom-navbar .nav-link.active {
   color: #b49d71;
@@ -101,8 +102,7 @@ h1,h2,h3,h4,h5,h6,p {
   display: none;
   opacity: 0;
   transform: translateX(80px);
-  font-family: 'neo-medium','Cairo',Arial,sans-serif !important;
-}
+font-family: "Noto Sans Arabic", sans-serif;}
 .slide-section.active { display: block; }
 .slide-section { padding-right: 90px; }
 
@@ -236,11 +236,11 @@ h1,h2,h3,h4,h5,h6,p {
   display: flex;
   align-items: center;
   gap: 44px;
-  animation: marquee-ltr 4s linear infinite;
+  animation: marquee-ltr 8s linear infinite;
 }
 
 .clients-marquee.rtl .clients-row {
-  animation: marquee-rtl 4s linear infinite;
+  animation: marquee-rtl 8s linear infinite;
 }
 
 .clients-marquee img {
