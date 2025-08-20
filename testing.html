@@ -449,31 +449,13 @@ footer p {
   }
 }
 
-
-#main-container {
-  display: none;
-}
-#preloader {
-  position: fixed;
-  inset: 0;
-  background: #fff;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+ 
 
   </style>
 </head>
 <body>
 
-
-  <!-- Preloader Overlay -->
-  <div id="preloader">
-    <!-- Load the loader.html file dynamically -->
-  </div>
-
+ 
 <div class="main-container">
 
 <!-- Navbar -->
@@ -828,26 +810,7 @@ footer p {
 </div>
 
 
-<script>
-  // Load loader.html content into preloader
-  fetch("loader.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("preloader").innerHTML = data;
-
-      // Only start the timer AFTER loader content is injected
-      window.addEventListener("load", function() {
-        setTimeout(function() {
-          document.getElementById("preloader").style.display = "none";
-          document.getElementById("main-container").style.display = "block";
-        }, 6000); // delay
-      });
-    })
-    .catch(err => {
-      console.error("Failed to load loader.html", err);
-    });
-</script>
-
+ 
 
 
 <!-- Bootstrap JS -->
