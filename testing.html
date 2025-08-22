@@ -478,7 +478,7 @@ footer p {
         <li class="nav-item"><a class="nav-link" href="#" data-slide="4">تواصل معنا</a></li>
 
       </ul>
-      <a class="nav-link mx-2" href="#">En</a>
+       <a id="lang-toggle" class="nav-link mx-2" href="#">En</a>
     </div>
   </div>
 </nav>
@@ -805,7 +805,44 @@ footer p {
 </div>
 
 
- 
+
+<!-- Language Toggle -->
+ <script>
+let currentLang = "ar"; // default Arabic
+
+document.getElementById("lang-toggle").addEventListener("click", (e) => {
+  e.preventDefault();
+  if (currentLang === "ar") {
+    switchToEnglish();
+  } else {
+    switchToArabic();
+  }
+});
+
+function switchToEnglish() {
+  document.documentElement.lang = "en";
+  document.documentElement.dir = "ltr";
+  currentLang = "en";
+  document.getElementById("lang-toggle").innerText = "Ar";
+
+  // update all text from data attributes
+  document.querySelectorAll("[data-lang-en]").forEach(el => {
+    el.innerText = el.getAttribute("data-lang-en");
+  });
+}
+
+function switchToArabic() {
+  document.documentElement.lang = "ar";
+  document.documentElement.dir = "rtl";
+  currentLang = "ar";
+  document.getElementById("lang-toggle").innerText = "En";
+
+  document.querySelectorAll("[data-lang-ar]").forEach(el => {
+    el.innerText = el.getAttribute("data-lang-ar");
+  });
+}
+</script>
+
 
 
 <!-- Bootstrap JS -->
