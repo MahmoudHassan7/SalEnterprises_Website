@@ -450,6 +450,37 @@ footer p {
 }
 
  
+.hero-heading {
+  font-size: 2.6rem;
+  color: #222;
+  line-height: 1.3;
+}
+.hero-subtext {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+}
+@media (max-width: 767px) {
+  .hero-heading { font-size: 1.8rem; }
+  .hero-subtext { font-size: 1rem; }
+  .hero-img-box img { width: 100%; height: auto; max-height: 60vh; object-fit: cover; }
+}
+
+/* Auto-scroll effect */
+.companies-track {
+  display: flex;
+  gap: 24px;
+  padding-inline: 16px;
+  animation: scroll-companies 30s linear infinite;
+}
+@keyframes scroll-companies {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Adjust based on number of cards */
+}
+.companies-carousel:hover .companies-track {
+  animation-play-state: paused; /* Pause on hover */
+}
+
 
   </style>
 </head>
@@ -495,20 +526,38 @@ footer p {
 
 
   <!-- Slides -->
+<!-- Hero Slide -->
 <div class="slide-section active" id="slide-0">
-  <div class="hero-main">
-    <div class="hero-left mx-auto">
-      <div class="hero-heading">
-        سعدنا بخدمة أكثر من 
-        <strong>5 ملايين</strong>
-        عميل، واضعين الجودة والاحترافية في مقدمة أولوياتنا
-      </div>
+  <div class="hero-main row align-items-center">
+    
+    <!-- Left Text -->
+    <div class="col-12 col-lg-6 text-center text-lg-end mb-4 mb-lg-0">
+      <h1 class="hero-heading fw-bold" 
+          data-lang-ar="نحو مستقبلٍ أكثر تميزًا"
+          data-lang-en="Towards a Future of Excellence">
+        نحو مستقبلٍ أكثر تميزًا
+      </h1>
+      <p class="hero-subtext mt-3"
+         data-lang-ar="نضع بين يديكم خبرة عقود في المقاولات، التصنيع، والتطوير العقاري، مع التزام راسخ بالجودة والابتكار لخدمة عملائنا وبناء وطن مزدهر."
+         data-lang-en="With decades of expertise in contracting, manufacturing, and real estate development, we are committed to quality and innovation to serve our clients and build a thriving nation.">
+        نضع بين يديكم خبرة عقود في المقاولات، التصنيع، والتطوير العقاري، مع التزام راسخ بالجودة والابتكار لخدمة عملائنا وبناء وطن مزدهر.
+      </p>
+      <a href="#slide-1" class="btn btn-lg mt-3" 
+         style="background:#b49d71; color:#fff; border-radius:30px; padding:10px 26px;"
+         data-lang-ar="تعرف علينا أكثر" data-lang-en="Learn More">
+        تعرف علينا أكثر
+      </a>
+    </div>
+    
+    <!-- Right Image -->
+    <div class="col-12 col-lg-6">
       <div class="hero-img-box floating-img">
         <img src="images/sal.png" alt="Main" />
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- About Us Slide -->
 <div class="slide-section" id="slide-1">
