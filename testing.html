@@ -18,10 +18,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">
 
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css'><link rel="stylesheet" href="./cards.css">
-
   <style>
 /* Global */
 body, html {
@@ -421,7 +417,46 @@ footer p {
 }
 
 
- 
+.companies-carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.companies-track {
+  display: flex;
+  gap: 24px;
+  width: max-content; /* allow continuous width */
+  animation: scroll-companies 30s linear infinite; /* speed */
+}
+
+.companies-track:hover {
+  animation-play-state: paused;
+}
+
+.company-card {
+  flex: 0 0 320px;
+  background: #fff;
+  border: 2px solid #eee;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(180,157,113,0.06);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.company-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 22px rgba(180,157,113,0.18);
+}
+
+/* Smooth infinite scroll */
+@keyframes scroll-companies {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* move left by half (one full set) */
+}
+
+
 
   </style>
 </head>
@@ -646,54 +681,100 @@ footer p {
 
  
  <!-- Companies Carousel -->
- <section class="game-section">
-  <h2 class="line-title">trending games</h2>
-  <div class="owl-carousel custom-carousel owl-theme">
-    <div class="item active" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/dota-2.jpg);">
-      <div class="item-desc">
-        <h3>Dota 2</h3>
-        <p>Dota 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
-          Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+<div class="companies-carousel">
+  <div class="companies-track">
+
+    <!-- === SET 1 === -->
+    <!-- Card Example 1 -->
+    <div class="company-card">
+      <img src="images/logos/msal.png" alt="MSAL" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        شركة محمد وسلطان ع. لوتاه للمقاولات (MSAL) تتميز بخبرتها الممتدة منذ 57 عامًا في تنفيذ مشاريع متميزة داخل دولة الإمارات، تشمل المباني السكنية والتجارية والوحدات الصناعية، مع التزام دائم بالجودة والابتكار.
       </div>
+      <a href="https://mslootah.ae" target="_blank" class="company-link">تصفح الشركة</a>
     </div>
-    <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/winter-3.jpg);">
-      <div class="item-desc">
-        <h3>The Witcher 3</h3>
-        <p>The Witcher 3 is a multiplayer online battle arena by Valve. The game is a sequel to Defense
-          of the Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+
+    <!-- Card Example 2 -->
+    <div class="company-card">
+      <img src="images/logos/modernmix.png" alt="Modern Mix" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        مودرن ميكس مصنع معتمد لإنتاج الخرسانة الجاهزة بسعة إنتاجية تصل إلى 140 مترًا مكعبًا في الساعة. نخدم مشاريع خاصة تحت إشراف استشاريين معروفين، مع التزام بالجودة العالية والدعم الفني السريع لضمان رضا العملاء.
       </div>
+      <a href="https://modernmix.ae" target="_blank" class="company-link">تصفح الشركة</a>
     </div>
-    <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/rdr-2.jpg);">
-      <div class="item-desc">
-        <h3>RDR 2</h3>
-        <p>RDR 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
-          Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+
+    <!-- Card Example 3 -->
+    <div class="company-card">
+      <img src="images/logos/dupack.png" alt="Dubai Pack" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        مصنع الامارات للتغليف شركة متخصصة في تقديم حلول تغليف عالية الجودة، بفضل مرافق متطورة وتقنيات تصنيع حديثة وفريق محترف يضمن التميز في كل جانب من جوانب التغليف.
       </div>
+      <a href="https://empack.ae" target="_blank" class="company-link">تصفح الشركة</a>
     </div>
-    <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/pubg.jpg);">
-      <div class="item-desc">
-        <h3>PUBG Mobile</h3>
-        <p>PUBG 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
-          Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+
+    <!-- Card Example 4 -->
+    <div class="company-card">
+      <img src="images/logos/empack.png" alt="Empack" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        مصنع دبي للتغليف شركة متخصصة في تقديم حلول تغليف عالية الجودة، بفضل مرافق متطورة وتقنيات تصنيع حديثة وفريق محترف يضمن التميز في كل جانب من جوانب التغليف.
       </div>
+      <a href="https://dupack.ae" target="_blank" class="company-link">تصفح الشركة</a>
     </div>
-    <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/fortnite.jpg);">
-      <div class="item-desc">
-        <h3>Fortnite</h3>
-        <p>Battle royale where 100 players fight to be the last person standing. which was a community-created mod
-          for Blizzard Entertainment's Warcraft III.</p>
+
+    <!-- Card Example 5 -->
+    <div class="company-card">
+      <img src="images/logos/asico.png" alt="Asico" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        تدير مجموعة سلطان أحمد لوتاه محفظة خاصة من العقارات السكنية متعددة العائلات في دبي، وتسعى باستمرار لتطويرها بما يلبي متطلبات السوق المتغيرة. ومن خلال شراكتنا الاستراتيجية مع شركة السويدي للاستثمار (ASICO)، نحرص على تقديم عقارات عالية الجودة مُدارة بكفاءة.
       </div>
+      <a href="https://dupack.ae" target="_blank" class="company-link">تصفح الشركة</a>
     </div>
-    <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/far-cry-5.jpg);">
-      <div class="item-desc">
-        <h3>Far Cry 5</h3>
-        <p>Far Cry 5 is a 2018 first-person shooter game developed by Ubisoft.
-          which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+
+    <!-- === SET 2 (Duplicate for smooth loop) === -->
+    <!-- Repeat the exact same 5 cards again -->
+    <div class="company-card">
+      <img src="images/logos/msal.png" alt="MSAL" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        شركة محمد وسلطان ع. لوتاه للمقاولات (MSAL) تتميز بخبرتها الممتدة منذ 57 عامًا...
       </div>
+      <a href="https://mslootah.ae" target="_blank" class="company-link">تصفح الشركة</a>
     </div>
+
+    <div class="company-card">
+      <img src="images/logos/modernmix.png" alt="Modern Mix" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        مودرن ميكس مصنع معتمد لإنتاج الخرسانة الجاهزة بسعة إنتاجية تصل إلى 140 مترًا...
+      </div>
+      <a href="https://modernmix.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
+    <div class="company-card">
+      <img src="images/logos/dupack.png" alt="Dubai Pack" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        مصنع الامارات للتغليف شركة متخصصة في تقديم حلول تغليف عالية الجودة...
+      </div>
+      <a href="https://empack.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
+    <div class="company-card">
+      <img src="images/logos/empack.png" alt="Empack" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        مصنع دبي للتغليف شركة متخصصة في تقديم حلول تغليف عالية الجودة...
+      </div>
+      <a href="https://dupack.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
+    <div class="company-card">
+      <img src="images/logos/asico.png" alt="Asico" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        تدير مجموعة سلطان أحمد لوتاه محفظة خاصة من العقارات السكنية متعددة العائلات...
+      </div>
+      <a href="https://dupack.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
   </div>
-  </div>
-</section>
+</div>
+
  
   </div>
 </div>
@@ -774,9 +855,7 @@ footer p {
 </footer>
 </div>
 
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script><script  src="./script.js"></script>
+
 
 <!-- Language Toggle -->
  <script>
