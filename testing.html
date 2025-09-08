@@ -417,7 +417,6 @@ footer p {
 }
 
 
-
 .companies-carousel {
   overflow: hidden;
   width: 100%;
@@ -427,11 +426,12 @@ footer p {
 .companies-track {
   display: flex;
   gap: 24px;
-  animation: scroll-companies 20s linear infinite; /* adjust speed here */
+  width: max-content; /* allow continuous width */
+  animation: scroll-companies 30s linear infinite; /* speed */
 }
 
 .companies-track:hover {
-  animation-play-state: paused; /* pause on hover */
+  animation-play-state: paused;
 }
 
 .company-card {
@@ -450,10 +450,12 @@ footer p {
   box-shadow: 0 4px 22px rgba(180,157,113,0.18);
 }
 
+/* Smooth infinite scroll */
 @keyframes scroll-companies {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* slide left half, then loop */
+  100% { transform: translateX(-50%); } /* move left by half (one full set) */
 }
+
 
 
   </style>
@@ -678,8 +680,7 @@ footer p {
     </div>
 
  
-<!-- Companies Carousel -->
-<!-- Companies Carousel -->
+ <!-- Companies Carousel -->
 <div class="companies-carousel">
   <div class="companies-track">
 
