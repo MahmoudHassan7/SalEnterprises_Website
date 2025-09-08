@@ -389,25 +389,8 @@ footer p {
   }
 }
 
-/* Companies Carousel */
-.companies-carousel {
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  display: flex;
-  padding: 20px 0;
-  scrollbar-width: none; /* Firefox */
-}
-.companies-carousel::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}
-
-.companies-track {
-  display: flex;
-  gap: 24px;
-  padding-inline: 16px;
-}
+ 
+ 
 
 .company-card {
   flex: 0 0 320px; /* card width */
@@ -449,20 +432,24 @@ footer p {
   }
 }
 
- 
-/* Auto-scroll effect */
+ .companies-carousel {
+  overflow: hidden;     /* hide scrollbars */
+  position: relative;
+}
+
 .companies-track {
   display: flex;
   gap: 24px;
-  padding-inline: 16px;
   animation: scroll-companies 30s linear infinite;
 }
+
 @keyframes scroll-companies {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Adjust based on number of cards */
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* scroll left continuously */
 }
+
 .companies-carousel:hover .companies-track {
-  animation-play-state: paused; /* Pause on hover */
+  animation-play-state: paused; /* pause on hover */
 }
 
 
