@@ -450,6 +450,21 @@ footer p {
 }
 
  
+/* Auto-scroll effect */
+.companies-track {
+  display: flex;
+  gap: 24px;
+  padding-inline: 16px;
+  animation: scroll-companies 30s linear infinite;
+}
+@keyframes scroll-companies {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Adjust based on number of cards */
+}
+.companies-carousel:hover .companies-track {
+  animation-play-state: paused; /* Pause on hover */
+}
+
 
   </style>
 </head>
@@ -678,6 +693,96 @@ footer p {
   <div class="companies-track">
     
     <!-- Card Example 1 -->
+    <div class="company-card">
+      <img src="images/logos/msal.png" alt="MSAL" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        شركة محمد وسلطان ع. لوتاه للمقاولات (MSAL) تتميز بخبرتها الممتدة منذ 57 عامًا في تنفيذ مشاريع متميزة داخل دولة الإمارات، تشمل المباني السكنية والتجارية والوحدات الصناعية، مع التزام دائم بالجودة والابتكار.
+      </div>
+      <a href="https://mslootah.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
+    <!-- Card Example 2 -->
+    <div class="company-card">
+      <img src="images/logos/modernmix.png" alt="Modern Mix" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        مودرن ميكس مصنع معتمد لإنتاج الخرسانة الجاهزة بسعة إنتاجية تصل إلى 140 مترًا مكعبًا في الساعة. نخدم مشاريع خاصة تحت إشراف استشاريين معروفين، مع التزام بالجودة العالية والدعم الفني السريع لضمان رضا العملاء.
+      </div>
+      <a href="https://modernmix.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
+    <!-- Card Example 3 -->
+    <div class="company-card">
+      <img src="images/logos/dupack.png" alt="Dubai Pack" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        مصنع الامارات للتغليف شركة متخصصة في تقديم حلول تغليف عالية الجودة، بفضل مرافق متطورة وتقنيات تصنيع حديثة وفريق محترف يضمن التميز في كل جانب من جوانب التغليف.
+      </div>
+      <a href="https://empack.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
+    <!-- Card Example 4 -->
+    <div class="company-card">
+      <img src="images/logos/empack.png" alt="Empack" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        مصنع دبي للتغليف شركة متخصصة في تقديم حلول تغليف عالية الجودة، بفضل مرافق متطورة وتقنيات تصنيع حديثة وفريق محترف يضمن التميز في كل جانب من جوانب التغليف.
+      </div>
+      <a href="https://dupack.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
+    <!-- Card Example 5 -->
+    <div class="company-card">
+      <img src="images/logos/asico.png" alt="Asico" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        تدير مجموعة سلطان أحمد لوتاه محفظة خاصة من العقارات السكنية متعددة العائلات في دبي، وتسعى باستمرار لتطويرها بما يلبي متطلبات السوق المتغيرة. ومن خلال شراكتنا الاستراتيجية مع شركة السويدي للاستثمار (ASICO)، نحرص على تقديم عقارات عالية الجودة مُدارة بكفاءة.
+      </div>
+      <a href="https://dupack.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
+        <!-- Card Example 1 -->
+    <div class="company-card">
+      <img src="images/logos/msal.png" alt="MSAL" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        شركة محمد وسلطان ع. لوتاه للمقاولات (MSAL) تتميز بخبرتها الممتدة منذ 57 عامًا في تنفيذ مشاريع متميزة داخل دولة الإمارات، تشمل المباني السكنية والتجارية والوحدات الصناعية، مع التزام دائم بالجودة والابتكار.
+      </div>
+      <a href="https://mslootah.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
+    <!-- Card Example 2 -->
+    <div class="company-card">
+      <img src="images/logos/modernmix.png" alt="Modern Mix" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        مودرن ميكس مصنع معتمد لإنتاج الخرسانة الجاهزة بسعة إنتاجية تصل إلى 140 مترًا مكعبًا في الساعة. نخدم مشاريع خاصة تحت إشراف استشاريين معروفين، مع التزام بالجودة العالية والدعم الفني السريع لضمان رضا العملاء.
+      </div>
+      <a href="https://modernmix.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
+    <!-- Card Example 3 -->
+    <div class="company-card">
+      <img src="images/logos/dupack.png" alt="Dubai Pack" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        مصنع الامارات للتغليف شركة متخصصة في تقديم حلول تغليف عالية الجودة، بفضل مرافق متطورة وتقنيات تصنيع حديثة وفريق محترف يضمن التميز في كل جانب من جوانب التغليف.
+      </div>
+      <a href="https://empack.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
+    <!-- Card Example 4 -->
+    <div class="company-card">
+      <img src="images/logos/empack.png" alt="Empack" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        مصنع دبي للتغليف شركة متخصصة في تقديم حلول تغليف عالية الجودة، بفضل مرافق متطورة وتقنيات تصنيع حديثة وفريق محترف يضمن التميز في كل جانب من جوانب التغليف.
+      </div>
+      <a href="https://dupack.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
+    <!-- Card Example 5 -->
+    <div class="company-card">
+      <img src="images/logos/asico.png" alt="Asico" class="company-logo mb-3" />
+      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
+        تدير مجموعة سلطان أحمد لوتاه محفظة خاصة من العقارات السكنية متعددة العائلات في دبي، وتسعى باستمرار لتطويرها بما يلبي متطلبات السوق المتغيرة. ومن خلال شراكتنا الاستراتيجية مع شركة السويدي للاستثمار (ASICO)، نحرص على تقديم عقارات عالية الجودة مُدارة بكفاءة.
+      </div>
+      <a href="https://dupack.ae" target="_blank" class="company-link">تصفح الشركة</a>
+    </div>
+
+        <!-- Card Example 1 -->
     <div class="company-card">
       <img src="images/logos/msal.png" alt="MSAL" class="company-logo mb-3" />
       <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
