@@ -959,51 +959,7 @@ document.querySelectorAll('.custom-navbar .nav-link').forEach(link => {
 
 
 </script>
-<script>
-const carousel = document.querySelector('.companies-carousel');
-let autoScroll;
-let isDragging = false;
-let startX;
-let scrollLeft;
-
-// Drag with mouse
-carousel.addEventListener('mousedown', (e) => {
-  isDragging = true;
-  startX = e.pageX - carousel.offsetLeft;
-  scrollLeft = carousel.scrollLeft;
-  clearInterval(autoScroll); // stop auto-scroll when dragging
-});
-carousel.addEventListener('mouseleave', () => { isDragging = false; });
-carousel.addEventListener('mouseup', () => {
-  isDragging = false;
-//  startAutoScroll(); // resume auto-scroll
-});
-carousel.addEventListener('mousemove', (e) => {
-  if(!isDragging) return;
-  e.preventDefault();
-  const x = e.pageX - carousel.offsetLeft;
-  const walk = (x - startX) * 1.5;
-  carousel.scrollLeft = scrollLeft - walk;
-});
-
-// Auto-scroll function
-function startAutoScroll() {
-  clearInterval(autoScroll);
-  autoScroll = setInterval(() => {
-    carousel.scrollLeft += 1; // speed (px per tick)
-
-    // Loop back when reaching the end
-    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-      carousel.scrollLeft = 0;
-    }
-  }, 20); // lower interval = smoother
-}
-
-// Start auto-scroll when page loads
-//startAutoScroll();
-</script>
-
-
+ 
 
 </body>
 </html>
