@@ -100,6 +100,27 @@
         }, 700);
       }, 2000);
     });
+
+
+
+window.addEventListener("load", () => {
+  const overlay = document.getElementById("loadingOverlay");
+  setTimeout(() => {
+    overlay.classList.add("fade-out");
+    setTimeout(() => {
+      fetch("testing.html")
+        .then(res => res.text())
+        .then(html => {
+          document.open();
+          document.write(html);
+          document.close();
+        });
+    }, 700);
+  }, 2000);
+});
+
+
   </script>
+  
 </body>
 </html>
