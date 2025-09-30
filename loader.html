@@ -20,48 +20,46 @@
       align-items: center;
       background: #3a3939;
       z-index: 9999;
-      flex-direction: column;
     }
-    .center-logo {
-      position: relative;
+    .corner-bars {
+      position: absolute;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: row;
+      gap: 24px;
+    }
+    .bar {
+      width: 24px;
+      height: 120px;
+      background: #57585b;
+      border-radius: 3px;
+      animation: waveSlide 0.9s forwards;
+    }
+    .corner-bars.top-right { top: 48px; right: 60px; }
+    .corner-bars.bottom-left { bottom: 48px; left: 60px; }
+    .bar:nth-child(1) { animation-delay: 0.1s; }
+    .bar:nth-child(2) { animation-delay: 0.25s; }
+    .bar:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes waveSlide {
+      0% { transform: translateX(0); opacity: 1; }
+      100% { transform: translateX(200px); opacity: 0; }
+    }
+    .corner-bars.bottom-left .bar {
+      animation-name: waveSlideLeft;
+    }
+    @keyframes waveSlideLeft {
+      0% { transform: translateX(0); opacity: 1; }
+      100% { transform: translateX(-200px); opacity: 0; }
     }
     .center-logo img {
-      width: 20vw;
-      max-width: 280px;
-      animation: pulse 1.6s infinite ease-in-out;
-      z-index: 2;
+      width: 30vw;
+      max-width: 320px;
+      animation: pulse 1.6s infinite;
     }
-    .ring {
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      border: 3px solid #57585b;
-      border-radius: 50%;
-      opacity: 0;
-      animation: ripple 2.4s infinite;
-    }
-    .ring:nth-child(1) { animation-delay: 0s; }
-    .ring:nth-child(2) { animation-delay: 0.6s; }
-    .ring:nth-child(3) { animation-delay: 1.2s; }
-
     @keyframes pulse {
       0%,100% { transform: scale(1);}
       50% { transform: scale(1.08);}
     }
-    @keyframes ripple {
-      0% {
-        transform: scale(0.3);
-        opacity: 0.8;
-      }
-      100% {
-        transform: scale(2.5);
-        opacity: 0;
-      }
-    }
-    /* Fade-out */
     .loading-overlay.fade-out {
       opacity: 0;
       transition: opacity 0.7s ease;
@@ -71,15 +69,18 @@
 </head>
 <body>
   <div class="loading-overlay" id="loadingOverlay">
+    <div class="corner-bars top-right">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
+    <div class="corner-bars bottom-left">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
     <div class="center-logo">
-      <span class="ring"></span>
-      <span class="ring"></span>
-      <span class="ring"></span>
       <img src="images/logos/sal_white.png" alt="Logo">
     </div>
   </div>
   <div id="main-content" style="display:none;">
-    <!-- HOME PAGE CONTENT GOES HERE -->
+    <!-- HOME PAGE CONTENT -->
   </div>
   <script>
     window.addEventListener("load", () => {
