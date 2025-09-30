@@ -456,66 +456,99 @@ footer p {
 }
 
 
-
-/* Hero new styles */
-.hero-container {
+/* Redesigned Hero Section */
+.hero-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
   flex-wrap: wrap;
+  padding: 2rem 5vw;
+  min-height: 100vh;
+  background: #fff;
 }
-.hero-text {
-  flex: 1 1 300px;
+
+.hero-content {
+  flex: 1 1 500px;
+  text-align: right;
 }
-.hero-image {
-  flex: 1 1 250px;
-  text-align: center;
+
+.hero-main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+  line-height: 1.4;
 }
-.hero-image img {
+
+.highlighted {
+  color: #b49d71;
+  border-bottom: 6px solid #f2e6d4;
+  padding-bottom: 4px;
+  display: inline-block;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 24px;
+}
+
+.hero-btn {
+  background-color: #b49d71;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #a98a5d;
+}
+
+.hero-visual {
+  flex: 1 1 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.hero-visual img {
   max-width: 100%;
   height: auto;
   object-fit: contain;
 }
-.hero-title {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  margin: 0;
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .hero-wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 2rem 4vw;
+  }
+
+  .hero-main-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.4rem;
+  }
+
+  .hero-visual {
+    margin-top: 30px;
+  }
 }
-.hero-sub {
-  margin-top: 1rem;
-  font-size: 1.15rem;
-  color: #555;
-  line-height: 1.6;
-}
-.highlight {
-  color: #b49d71;
-  text-decoration: underline;
-  text-decoration-color: #b49d71;
-  text-decoration-thickness: 2px;
-}
-/* Button */
-.hero-btn {
-  margin-top: 1.5rem;
-  padding: 0.75rem 2rem;
-  background-color: #b49d71;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  text-decoration: none;
-  display: inline-block;
-}
-/* Responsive adjustments */
-@media (max-width: 991px) {
-  .hero-title { font-size: 2rem; }
-  .hero-sub { font-size: 1rem; }
-}
-@media (max-width: 575px) {
-  .hero-container { flex-direction: column-reverse; }
-  .hero-title { font-size: 1.6rem; }
-  .hero-btn { font-size: 1rem; padding: 0.6rem 1.6rem; }
-}
+
 
 
   </style>
@@ -566,26 +599,22 @@ footer p {
 
   <!-- Slides -->
 <div class="slide-section active" id="slide-0">
-  <div class="hero-container d-flex align-items-center">
-    <div class="hero-text">
-      <h1 class="hero-title" data-lang-ar="خدمنا أكثر من <span class='highlight'>5 ملايين</span> عميل"
-                          data-lang-en="We have served over <span class='highlight'>5 million</span> clients">
-        خدمنا أكثر من <span class="highlight">5 ملايين</span> عميل
+  <div class="hero-wrapper">
+    <div class="hero-content">
+      <h1 class="hero-main-title">
+        <span class="highlighted">5 ملايين</span> عميل
       </h1>
-      <p class="hero-sub" data-lang-ar="نسعى باستمرار لتقديم جودة وابتكار في كل مشروع نقوم به، لضمان رضا عملائنا وتعزيز مكانتنا في السوق."
-                         data-lang-en="We constantly strive to deliver quality and innovation in every project, ensuring customer satisfaction and reinforcing our market position.">
-        نسعى باستمرار لتقديم جودة وابتكار في كل مشروع نقوم به، لضمان رضا عملائنا وتعزيز مكانتنا في السوق.
+      <p class="hero-description">
+        نفتخر بخدمة أكثر من خمسة ملايين عميل في مختلف قطاعات الأعمال، مع الالتزام بالجودة والابتكار لبناء مستقبل مزدهر.
       </p>
-      <a href="#slide-1" class="btn hero-btn"
-         data-lang-ar="اكتشف المزيد" data-lang-en="Discover More">
-        اكتشف المزيد
-      </a>
+      <a href="#slide-1" class="hero-btn">استكشاف المزيد</a>
     </div>
-    <div class="hero-image">
-      <img src="images/sal.png" alt="Main Hero Image" />
+    <div class="hero-visual">
+      <img src="images/sal.png" alt="Sultan Ahmed Lootah Enterprises" />
     </div>
   </div>
 </div>
+
 
 
 <!-- About Us Slide -->
