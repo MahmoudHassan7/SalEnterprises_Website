@@ -457,6 +457,67 @@ footer p {
 
 
 
+/* Hero new styles */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.hero-text {
+  flex: 1 1 300px;
+}
+.hero-image {
+  flex: 1 1 250px;
+  text-align: center;
+}
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.hero-title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 0;
+}
+.hero-sub {
+  margin-top: 1rem;
+  font-size: 1.15rem;
+  color: #555;
+  line-height: 1.6;
+}
+.highlight {
+  color: #b49d71;
+  text-decoration: underline;
+  text-decoration-color: #b49d71;
+  text-decoration-thickness: 2px;
+}
+/* Button */
+.hero-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background-color: #b49d71;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-block;
+}
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .hero-title { font-size: 2rem; }
+  .hero-sub { font-size: 1rem; }
+}
+@media (max-width: 575px) {
+  .hero-container { flex-direction: column-reverse; }
+  .hero-title { font-size: 1.6rem; }
+  .hero-btn { font-size: 1rem; padding: 0.6rem 1.6rem; }
+}
+
+
   </style>
 <script>window.gtranslateSettings = {"default_language":"ar","detect_browser_language":true,"languages":["ar","en"],"wrapper_selector":".gtranslate_wrapper","switcher_vertical_position":"top"}</script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
@@ -505,19 +566,27 @@ footer p {
 
   <!-- Slides -->
 <div class="slide-section active" id="slide-0">
-  <div class="hero-main">
-    <div class="hero-left mx-auto">
-      <div class="hero-heading">
-        سعدنا بخدمة أكثر من 
-        <strong>5 ملايين</strong>
-        عميل، واضعين الجودة والاحترافية في مقدمة أولوياتنا
-      </div>
-      <div class="hero-img-box floating-img">
-        <img src="images/sal.png" alt="Main" />
-      </div>
+  <div class="hero-container d-flex align-items-center">
+    <div class="hero-text">
+      <h1 class="hero-title" data-lang-ar="خدمنا أكثر من <span class='highlight'>5 ملايين</span> عميل"
+                          data-lang-en="We have served over <span class='highlight'>5 million</span> clients">
+        خدمنا أكثر من <span class="highlight">5 ملايين</span> عميل
+      </h1>
+      <p class="hero-sub" data-lang-ar="نسعى باستمرار لتقديم جودة وابتكار في كل مشروع نقوم به، لضمان رضا عملائنا وتعزيز مكانتنا في السوق."
+                         data-lang-en="We constantly strive to deliver quality and innovation in every project, ensuring customer satisfaction and reinforcing our market position.">
+        نسعى باستمرار لتقديم جودة وابتكار في كل مشروع نقوم به، لضمان رضا عملائنا وتعزيز مكانتنا في السوق.
+      </p>
+      <a href="#slide-1" class="btn hero-btn"
+         data-lang-ar="اكتشف المزيد" data-lang-en="Discover More">
+        اكتشف المزيد
+      </a>
+    </div>
+    <div class="hero-image">
+      <img src="images/sal.png" alt="Main Hero Image" />
     </div>
   </div>
 </div>
+
 
 <!-- About Us Slide -->
 <div class="slide-section" id="slide-1">
