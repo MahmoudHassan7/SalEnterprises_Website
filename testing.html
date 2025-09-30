@@ -456,97 +456,106 @@ footer p {
 }
 
 
-/* Redesigned Hero Section */
 .hero-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 2rem 5vw;
+  padding: 3rem 6vw;
   min-height: 100vh;
-  background: #fff;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fdf8f0 0%, #ffffff 100%);
 }
-
 .hero-content {
-  flex: 1 1 500px;
-  text-align: right;
+  flex: 1 1 400px;
+  z-index: 2;
 }
-
 .hero-main-title {
   font-size: 3rem;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 20px;
-  line-height: 1.4;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s forwards;
 }
-
 .highlighted {
   color: #b49d71;
-  border-bottom: 6px solid #f2e6d4;
+  border-bottom: 6px solid rgba(180,157,113,0.4);
   padding-bottom: 4px;
-  display: inline-block;
 }
-
 .hero-description {
   font-size: 1.2rem;
   color: #555;
-  line-height: 1.8;
-  max-width: 600px;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s forwards 0.3s;
 }
-
+.hero-stats {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+.hero-stats li {
+  font-size: 1.05rem;
+  color: #777;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s forwards 0.5s;
+}
 .hero-btn {
   background-color: #b49d71;
-  color: #fff;
-  padding: 0.75rem 2rem;
+  color: white;
+  padding: 0.8rem 2rem;
   border-radius: 30px;
   font-size: 1.1rem;
   text-decoration: none;
-  transition: background 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s forwards 0.7s;
 }
-
-.hero-btn:hover {
-  background-color: #a98a5d;
-}
-
 .hero-visual {
-  flex: 1 1 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
+  flex: 1 1 300px;
+  text-align: center;
+  position: relative;
 }
-
-.hero-visual img {
+.hero-img {
   max-width: 100%;
   height: auto;
   object-fit: contain;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInScale 1s forwards 1s;
 }
 
-/* Mobile Optimizations */
+/* Animations */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .hero-wrapper {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 2rem 4vw;
-  }
-
-  .hero-main-title {
-    font-size: 2rem;
-  }
-
-  .hero-description {
-    font-size: 1rem;
-  }
-
-  .hero-btn {
-    font-size: 1rem;
-    padding: 0.6rem 1.4rem;
-  }
-
-  .hero-visual {
-    margin-top: 30px;
-  }
+  .hero-main-title { font-size: 2.2rem; }
+  .hero-description { font-size: 1rem; }
+  .hero-stats { flex-direction: column; gap: 1rem; }
+  .hero-wrapper { padding: 2rem 4vw; }
+}
+@media (max-width: 575px) {
+  .hero-wrapper { flex-direction: column-reverse; text-align: center; }
+  .hero-main-title { font-size: 1.8rem; }
+  .hero-btn { padding: 0.6rem 1.6rem; font-size: 1rem; }
 }
 
 
@@ -598,22 +607,29 @@ footer p {
 
 
   <!-- Slides -->
+<!-- Hero Slide -->
 <div class="slide-section active" id="slide-0">
   <div class="hero-wrapper">
     <div class="hero-content">
       <h1 class="hero-main-title">
-        <span class="highlighted">5 ملايين</span> عميل
+        <span class="highlighted">5 ملايين</span> عميل
       </h1>
       <p class="hero-description">
-        نفتخر بخدمة أكثر من خمسة ملايين عميل في مختلف قطاعات الأعمال، مع الالتزام بالجودة والابتكار لبناء مستقبل مزدهر.
+        نفخر بأننا خدمنا أكثر من خمسة ملايين عميل عبر مشاريعنا المتنوعة في العقارات، التصنيع والمقاولات.
       </p>
+      <ul class="hero-stats">
+        <li>+ 50 مشروع ضخم</li>
+        <li>وجود في 7 إمارات</li>
+        <li>فريق يزيد عن 300 موظف</li>
+      </ul>
       <a href="#slide-1" class="hero-btn">استكشاف المزيد</a>
     </div>
     <div class="hero-visual">
-      <img src="images/sal.png" alt="Sultan Ahmed Lootah Enterprises" />
+      <img src="images/sal.png" alt="Hero Image" class="hero-img" />
     </div>
   </div>
 </div>
+
 
 
 
