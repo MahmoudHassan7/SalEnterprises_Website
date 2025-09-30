@@ -59,6 +59,22 @@
       transition: opacity 0.7s ease;
       pointer-events: none;
     }
+    .center-logo img {
+  width: 35vw;
+  max-width: 350px;
+  min-width: 180px; /* ensure visibility on small screens */
+  animation: pulse 1.6s infinite ease-in-out;
+  z-index: 2;
+}
+
+/* On very small screens, force a bigger min size */
+@media (max-width: 480px) {
+  .center-logo img {
+    width: 55vw;   /* scale a bit more */
+    min-width: 160px;
+  }
+}
+
   </style>
 </head>
 <body>
