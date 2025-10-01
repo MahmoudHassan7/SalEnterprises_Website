@@ -582,6 +582,31 @@ footer p {
 }
 
 
+
+.companies-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.companies-track {
+  display: flex;
+  gap: 16px; /* spacing between cards */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.company-card {
+  min-width: 280px; /* adjust based on your design */
+  flex: 0 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  scroll-snap-align: start;
+}
+
+
   </style>
   
 <script>window.gtranslateSettings = {"default_language":"ar","detect_browser_language":true,"languages":["ar","en"],"wrapper_selector":".gtranslate_wrapper","switcher_vertical_position":"top"}</script>
