@@ -583,28 +583,6 @@ footer p {
 
 
 
-.companies-carousel {
-  overflow: hidden;
-  width: 100%;
-}
-
-.companies-track {
-  display: flex;
-  gap: 16px; /* spacing between cards */
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.company-card {
-  min-width: 280px; /* adjust based on your design */
-  flex: 0 0 auto;
-  background: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  scroll-snap-align: start;
-}
 
 
   </style>
@@ -845,9 +823,13 @@ footer p {
 <div class="companies-carousel">
   <div class="companies-track">
 
+
+    <div class="swiper companies-carousel">
+  <div class="swiper-wrapper">
+
     <!-- === SET 1 === -->
     <!-- Card Example 1 -->
-    <div class="company-card">
+    <div class="company-card swiper-slide company-card">
       <img src="images/logos/msal.png" alt="MSAL" class="company-logo mb-3" />
       <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
         شركة محمد وسلطان ع. لوتاه للمقاولات (MSAL) تتميز بخبرتها الممتدة منذ 57 عامًا في تنفيذ مشاريع متميزة داخل دولة الإمارات، تشمل المباني السكنية والتجارية والوحدات الصناعية، مع التزام دائم بالجودة والابتكار.
@@ -856,7 +838,7 @@ footer p {
     </div>
 
     <!-- Card Example 2 -->
-    <div class="company-card">
+    <div class="company-card swiper-slide company-card">
       <img src="images/logos/modernmix.png" alt="Modern Mix" class="company-logo mb-3" />
       <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
         مودرن ميكس مصنع معتمد لإنتاج الخرسانة الجاهزة بسعة إنتاجية تصل إلى 140 مترًا مكعبًا في الساعة. نخدم مشاريع خاصة تحت إشراف استشاريين معروفين، مع التزام بالجودة العالية والدعم الفني السريع لضمان رضا العملاء.
@@ -865,7 +847,7 @@ footer p {
     </div>
 
     <!-- Card Example 3 -->
-    <div class="company-card">
+    <div class="company-card swiper-slide company-card">
       <img src="images/logos/dupack.png" alt="Dubai Pack" class="company-logo mb-3" />
       <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
         مصنع الامارات للتغليف شركة متخصصة في تقديم حلول تغليف عالية الجودة، بفضل مرافق متطورة وتقنيات تصنيع حديثة وفريق محترف يضمن التميز في كل جانب من جوانب التغليف.
@@ -874,7 +856,7 @@ footer p {
     </div>
 
     <!-- Card Example 4 -->
-    <div class="company-card">
+    <div class="company-card swiper-slide company-card">
       <img src="images/logos/empack.png" alt="Empack" class="company-logo mb-3" />
       <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
         مصنع دبي للتغليف شركة متخصصة في تقديم حلول تغليف عالية الجودة، بفضل مرافق متطورة وتقنيات تصنيع حديثة وفريق محترف يضمن التميز في كل جانب من جوانب التغليف.
@@ -883,55 +865,15 @@ footer p {
     </div>
 
     <!-- Card Example 5 -->
-    <div class="company-card">
+    <div class="company-card swiper-slide company-card">
       <img src="images/logos/asico.png" alt="Asico" class="company-logo mb-3" />
       <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
         تدير مجموعة سلطان أحمد لوتاه محفظة خاصة من العقارات السكنية متعددة العائلات في دبي، وتسعى باستمرار لتطويرها بما يلبي متطلبات السوق المتغيرة. ومن خلال شراكتنا الاستراتيجية مع شركة السويدي للاستثمار (ASICO)، نحرص على تقديم عقارات عالية الجودة مُدارة بكفاءة.
       </div>
       <a href="https://dupack.ae" target="_blank" class="company-link">تصفح الشركة</a>
     </div>
-
-    <!-- === SET 2 (Duplicate for smooth loop) === -->
-    <!-- Repeat the exact same 5 cards again -->
-    <div class="company-card">
-      <img src="images/logos/msal.png" alt="MSAL" class="company-logo mb-3" />
-      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
-        شركة محمد وسلطان ع. لوتاه للمقاولات (MSAL) تتميز بخبرتها الممتدة منذ 57 عامًا...
-      </div>
-      <a href="https://mslootah.ae" target="_blank" class="company-link">تصفح الشركة</a>
-    </div>
-
-    <div class="company-card">
-      <img src="images/logos/modernmix.png" alt="Modern Mix" class="company-logo mb-3" />
-      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
-        مودرن ميكس مصنع معتمد لإنتاج الخرسانة الجاهزة بسعة إنتاجية تصل إلى 140 مترًا...
-      </div>
-      <a href="https://modernmix.ae" target="_blank" class="company-link">تصفح الشركة</a>
-    </div>
-
-    <div class="company-card">
-      <img src="images/logos/dupack.png" alt="Dubai Pack" class="company-logo mb-3" />
-      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
-        مصنع الامارات للتغليف شركة متخصصة في تقديم حلول تغليف عالية الجودة...
-      </div>
-      <a href="https://empack.ae" target="_blank" class="company-link">تصفح الشركة</a>
-    </div>
-
-    <div class="company-card">
-      <img src="images/logos/empack.png" alt="Empack" class="company-logo mb-3" />
-      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
-        مصنع دبي للتغليف شركة متخصصة في تقديم حلول تغليف عالية الجودة...
-      </div>
-      <a href="https://dupack.ae" target="_blank" class="company-link">تصفح الشركة</a>
-    </div>
-
-    <div class="company-card">
-      <img src="images/logos/asico.png" alt="Asico" class="company-logo mb-3" />
-      <div style="color:#888; font-size:1.05rem; margin-bottom:10px; text-align:right;">
-        تدير مجموعة سلطان أحمد لوتاه محفظة خاصة من العقارات السكنية متعددة العائلات...
-      </div>
-      <a href="https://dupack.ae" target="_blank" class="company-link">تصفح الشركة</a>
-    </div>
+ </div>
+ </div>
 
   </div>
 </div>
@@ -1018,41 +960,18 @@ footer p {
 
 
 
-<!-- Language Toggle -->
- <script>
-let currentLang = "ar"; // default Arabic
-
-document.getElementById("lang-toggle").addEventListener("click", (e) => {
-  e.preventDefault();
-  if (currentLang === "ar") {
-    switchToEnglish();
-  } else {
-    switchToArabic();
-  }
-});
-
-function switchToEnglish() {
-  document.documentElement.lang = "en";
-  document.documentElement.dir = "ltr";
-  currentLang = "en";
-  document.getElementById("lang-toggle").innerText = "Ar";
-
-  // update all text from data attributes
-  document.querySelectorAll("[data-lang-en]").forEach(el => {
-    el.innerText = el.getAttribute("data-lang-en");
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.companies-carousel', {
+    slidesPerView: 1.2,
+    spaceBetween: 16,
+    loop: true,
+    autoplay: { delay: 3000 },
+    breakpoints: {
+      768: { slidesPerView: 3 }, // tablets+
+      1024: { slidesPerView: 5 } // desktops
+    }
   });
-}
-
-function switchToArabic() {
-  document.documentElement.lang = "ar";
-  document.documentElement.dir = "rtl";
-  currentLang = "ar";
-  document.getElementById("lang-toggle").innerText = "En";
-
-  document.querySelectorAll("[data-lang-ar]").forEach(el => {
-    el.innerText = el.getAttribute("data-lang-ar");
-  });
-}
 </script>
 
 
