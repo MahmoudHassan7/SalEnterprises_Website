@@ -873,7 +873,7 @@ footer p {
       <a href="https://mslootah.ae" target="_blank" class="company-link">تصفح الشركة</a>
     </div>
 
-    
+
  </div>
  </div>
  
@@ -956,6 +956,31 @@ footer p {
 </footer>
 </div>
 
+
+
+<script>
+  function updateDirection() {
+    // detect current language from URL (GTranslate adds /en or /ar in path or query)
+    const lang = document.documentElement.lang || 
+                 (location.pathname.split('/')[1] || '').toLowerCase();
+
+    if (lang === "en") {
+      document.documentElement.setAttribute("dir", "ltr");
+      document.body.style.textAlign = "left";
+    } else {
+      document.documentElement.setAttribute("dir", "rtl");
+      document.body.style.textAlign = "right";
+    }
+  }
+
+  // Run on load
+  updateDirection();
+
+  // Re-run whenever the URL changes (GTranslate reloads page when switching)
+  window.addEventListener("load", updateDirection);
+  window.addEventListener("popstate", updateDirection);
+  window.addEventListener("hashchange", updateDirection);
+</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
