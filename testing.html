@@ -1039,6 +1039,16 @@ document.querySelectorAll('.custom-navbar .nav-link').forEach(link => {
 });
 
 
+
+
+document.querySelectorAll('.hero-button').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const targetIndex = parseInt(btn.dataset.slide);
+    showSlide(targetIndex);
+  });
+});
+
 </script>
  
 
