@@ -911,6 +911,40 @@
         justify-content: center; 
       }
     }
+
+    @media (max-width: 991px) {
+  .language-switcher {
+    top: 15px;
+    z-index: 1003; /* Higher than navbar but lower than mobile menu */
+  }
+  
+  /* Arabic mobile - left side */
+  .dir-rtl .language-switcher {
+    left: 15px;
+    right: auto;
+  }
+  
+  /* English mobile - right side */
+  .dir-ltr .language-switcher {
+    right: 15px;
+    left: auto;
+  }
+  
+  .language-switcher select {
+    padding: 6px 10px;
+    font-size: 12px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .custom-navbar {
+    padding: 0.8rem 1rem; /* Reset padding to normal */
+  }
+  
+  .custom-navbar .navbar-collapse {
+    z-index: 1004; /* Higher than language switcher */
+  }
+}
   </style>
 </head>
 <body>
