@@ -1003,10 +1003,120 @@
         /* Higher than language switcher */
       }
     }
+
+
+    /* =========================
+   LOADER WRAPPER
+========================= */
+#site-loader {
+  position: fixed;
+  inset: 0;
+  background: #3a3939;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+/* fade out state */
+#site-loader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* =========================
+   CENTER CONTENT
+========================= */
+.loader-center {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   LOGO
+========================= */
+.loader-logo {
+  width: 35vw;
+  max-width: 350px;
+  min-width: 160px;
+  z-index: 2;
+  animation: loader-pulse 1.6s infinite ease-in-out;
+}
+
+/* =========================
+   RINGS
+========================= */
+.loader-ring {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border: 3px solid #57585b;
+  border-radius: 50%;
+  opacity: 0;
+  animation: loader-ripple 2.4s infinite;
+}
+
+.loader-ring:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loader-ring:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.loader-ring:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes loader-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes loader-ripple {
+  0% { transform: scale(0.3); opacity: 0.8; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+@media (max-width: 480px) {
+  .loader-logo {
+    width: 55vw;
+    min-width: 140px;
+  }
+}
+
+
   </style>
 </head>
 
 <body>
+
+
+
+<!-- LOADER -->
+<div id="site-loader">
+  <div class="loader-center">
+
+    <span class="loader-ring"></span>
+    <span class="loader-ring"></span>
+    <span class="loader-ring"></span>
+
+    <img src="images/logos/sal_white.png" alt="Logo" class="loader-logo">
+
+  </div>
+</div>
+
+
 
   <!-- Language Switcher -->
   <div class="language-switcher">
@@ -1368,7 +1478,7 @@
 
     <!-- Footer -->
     <footer>
-      <p data-ar="جميع الحقوق محفوظة © لمشاريع سلطان أحمد لوتاه 2025"
+      <p data-ar="جميع الحقوق محفوظة © لمشاريع سلطان أحمد لوتاه 2026"
         data-en="All Rights Reserved © Sultan Ahmed Lootah Enterprises 2026">جميع الحقوق محفوظة © لمشاريع سلطان أحمد
         لوتاه
         2026</p>
@@ -1384,6 +1494,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+  <script>
+    window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("site-loader").classList.add("hide");
+  }, 1500);
+});
+  </script>
 
   <script>
     // Initialize Swiper
