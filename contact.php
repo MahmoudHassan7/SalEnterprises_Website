@@ -1,41 +1,28 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+header('Content-Type: application/json');
 
-    // Get form data
-    $name = htmlspecialchars(trim($_POST['name']));
-    $email = htmlspecialchars(trim($_POST['email']));
-    $message = htmlspecialchars(trim($_POST['message']));
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    // Your email
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
+
     $to = "headoffice@salenterprises.ae";
-
-    // Subject
     $subject = "New Contact Form Message";
 
-    // Email body
-    $body = "
-    You received a new message from your website.
+    $body = "Name: $name\nEmail: $email\nMessage:\n$message";
 
-    Name: $name
-    Email: $email
+    $headers = "From: $email\r\nReply-To: $email\r\n";
 
-    Message:
-    $message
-    ";
+    $success = mail($to, $subject, $body, $headers);
 
-    // Headers
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-
-    // Send email
-    if (mail($to, $subject, $body, $headers)) {
-        echo "Message sent successfully!";
+    if ($success) {
+        echo json_encode(["status" => "success"]);
     } else {
-        echo "Failed to send message.";
+        echo json_encode(["status" => "error"]);
     }
 
 } else {
-    echo "Invalid request.";
+    echo json_encode(["status" => "invalid"]);
 }
-?>
